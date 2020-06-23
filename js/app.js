@@ -15,20 +15,20 @@ var Seattle = {
   setCookiesperhr: function () {
     this.cookiespurch=multiply(this.avgCookiesale,this.custperhr);
   },
-  hoursOperation: ['6am:',
-    '7am:',
-    '8am:',
-    '9am:',
-    '10am:',
-    '11am:',
-    '12pm:',
-    '1pm:',
-    '2pm:',
-    '3pm:',
-    '4pm:',
-    '5pm:',
-    '6pm:',
-    '7pm:'
+  hoursOperation: ['6am:',this.cookiesperhr, 'cookies',
+    '7am:',this.cookiesperhr,'cookies',
+    '8am:',this.cookiesperhr,'cookies',
+    '9am:',this.cookiesperhr,'cookies',
+    '10am:',this.cookiesperhr,'cookies',
+    '11am:',this.cookiesperhr,'cookies',
+    '12pm:',this.cookiesperhr,'cookies',
+    '1pm:',this.cookiesperhr,'cookies',
+    '2pm:',this.cookiesperhr,'cookies',
+    '3pm:',this.cookiesperhr,'cookies',
+    '4pm:',this.cookiesperhr,'cookies',
+    '5pm:',this.cookiesperhr,'cookies',
+    '6pm:',this.coookiesperhr,'cookies',
+    '7pm:',this.cookiesperhr,'cookies',
   ],
 }
 Seattle.setCustperhr();
@@ -49,3 +49,14 @@ function multiply(a, b) {
   return Math.round(product);
 }
 multiply();
+
+// Store the results for the array
+
+// function cookiesPerOper () {
+        // var = hoursOperation
+        // var = arrayLength = hoursOperation.length;
+//     for (var i = 0; i <= 13;)(i++); {
+//         if i <= 
+
+//     }
+// }
