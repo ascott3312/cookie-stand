@@ -33,6 +33,7 @@ var storeOne = {
     }
   }
 };
+storeOne.calcTotal();
 var root = document.getElementById('root');
 var ul1 = document.createElement('ul');
 root.appendChild(ul1);
@@ -71,6 +72,7 @@ var storeTwo = {
     }
   }
 };
+storeTwo.calcTotal();
 var ul2 = document.createElement('ul');
 root.appendChild(ul2);
 for (var i = 0; i <storeTwo.cookiesPerHour.length; i++) {
@@ -79,8 +81,8 @@ for (var i = 0; i <storeTwo.cookiesPerHour.length; i++) {
   ul2.appendChild(li);
 }
 var total2 = document.createElement('li');
-total2.textContent = `Total: ${storeTwo.totalCookies}`;
-ul1.appendChild(total2);
+total2.textContent = `Total2: ${storeTwo.totalCookies}`;
+ul2.appendChild(total2);
 
 
 var storeThree= {
@@ -109,6 +111,7 @@ var storeThree= {
     }
   }
 };
+storeThree.calcTotal();
 var ul3 = document.createElement('ul');
 root.appendChild(ul3);
 for (var i = 0; i <storeThree.cookiesPerHour.length; i++) {
@@ -117,8 +120,8 @@ for (var i = 0; i <storeThree.cookiesPerHour.length; i++) {
   ul3.appendChild(li);
 }
 var total3 = document.createElement('li');
-total3.textContent = `Total: ${storeThree.totalCookies}`;
-ul1.appendChild(total3);
+total3.textContent = `Total3: ${storeThree.totalCookies}`;
+ul3.appendChild(total3);
 
 var storeFour= {
   name:'Paris',
@@ -146,6 +149,7 @@ var storeFour= {
     }
   }
 };
+storeFour.calcTotal();
 var ul4 = document.createElement('ul');
 root.appendChild(ul4);
 for (var i = 0; i <storeFour.cookiesPerHour.length; i++) {
@@ -154,8 +158,8 @@ for (var i = 0; i <storeFour.cookiesPerHour.length; i++) {
   ul4.appendChild(li);
 }
 var total4 = document.createElement('li');
-total4.textContent = `Total: ${storeFour.totalCookies}`;
-ul1.appendChild(total4);
+total4.textContent = `Total4: ${storeFour.totalCookies}`;
+ul4.appendChild(total4);
 
 var storeFive= {
   name:'Lima',
@@ -184,11 +188,6 @@ var storeFive= {
   }
 };
 console.log (storeOne, storeTwo, storeThree, storeFour, storeFive);
-
-storeOne.calcTotal();
-storeTwo.calcTotal();
-storeThree.calcTotal();
-storeFour.calcTotal();
 storeFive.calcTotal();
 console.log(storeOne.totalCookies,storeTwo.totalCookies, storeThree.totalCookies, storeFour.totalCookies, storeFive.totalCookies);
 
@@ -200,7 +199,7 @@ for (var i = 0; i <storeFive.cookiesPerHour.length; i++) {
   ul5.appendChild(li);
 }
 var total5 = document.createElement('li');
-total5.textContent = `Total: ${storeFive.totalCookies}`;
+total5.textContent = `Total5: ${storeFive.totalCookies}`;
 ul5.appendChild(total5);
 
 
