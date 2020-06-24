@@ -217,7 +217,7 @@ function randomCustperhr(min,max) {
 }
 var hoursOperation = ['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:'];
 
-function Salmon(name, minCust, maxCust,avgCookiesale,customerPerHour,cookiesPerHour,totalCookies ){
+function Salmon(name, minCust, maxCust,avgCookiesale){
   this.name = name;
   this.minCust = minCust;
   this.maxCust = maxCust;
@@ -226,70 +226,71 @@ function Salmon(name, minCust, maxCust,avgCookiesale,customerPerHour,cookiesPerH
   this.cookiesPerHour = [];
   this.totalCookies = 0;
 }
-
 Salmon.prototype.custPerHr = function() {
-    for (var i = 0; i <hoursOperation.length; i++) {
-      this.customerPerHour.push(randomCustperhr(this.minCust, this.maxCust));
-    }
-Salmon.prototype.custPerHr = function() {
-      for (var i = 0; i <hoursOperation.length; i++) {
-        this.customerPerHour.push(randomCustperhr(this.minCust, this.maxCust));
+  for (var i = 0; i <hoursOperation.length; i++) {
+    this.customerPerHour.push(randomCustperhr(this.minCust, this.maxCust));
+  }
+};
 Salmon.prototype.ccustPerHr = function() {
-    for (var i = 0; i <hoursOperation.length; i++) {
-      this.customerPerHour.push(randomCustperhr(this.minCust, this.maxCust));
-    } }
-  }   }
-Salmon.prototype,ccustPerHr = function() {
-    for (var i = 0; i <hoursOperation.length; i++) {
-      this.customerPerHour.push(randomCustperhr(this.minCust, this.maxCust));
-    } }
+  for (var i = 0; i <hoursOperation.length; i++) {
+    this.customerPerHour.push(randomCustperhr(this.minCust, this.maxCust));
   }
+};
 Salmon.calcTotal = function() {
-    this.cookiesPerHr();
-    for (var i = 0; i <this.cookiesPerHour.length; i++) {
-      this.totalCookies = this.totalCookies + this.cookiesPerHour[i];
-    }
+  this.cookiesPerHr();
+  for (var i = 0; i <this.cookiesPerHour.length; i++) {
+    this.totalCookies = this.totalCookies + this.cookiesPerHour[i];
   }
+};
 //To rendor the table
 
+// var tableRow = document.createElement('tr');
+// var tableData = document.createElement('td');
+//Create Table Header
 Salmon.prototype.render = function() {
-  var salmonTable = document.getElementById('salmonTable');
+  var fullTable = document.getElementById('salmonTable');
+  var newTableHead = document.createElement('thead');
+  fullTable.appendChild (newTableHead);
+  // Create table row
+  // var tableHead = document.createElement('tr');
+  var newRow = document.createElement('tr');
+  fullTable.appendChild(newRow);
+  for(var i = 0; i < allStore.length;i++);
+  newRow.textContent = allStore [i];
+  newRow.appendChild('tr');
 
-  var tableRow = document.createElement('tr')
-  var tableData = document.createElement('td')
-  var salmonTable = document.createElement('tr');
-  var name = document.createElement('td');
-  name.textContent = this.name;
-  name.appendChild(name);
-  for(var i = 0; i < storeHours.length; i++){
-    tableData.textContent = document.createElement ('td')
-    tableRow.appendChild(tableDate)
-  }
+  // Creats table footer
+  var newFooter = document.createElement('tfoot');
+  fullTable.appendChild(newFooter);
+  //Create table data
   var customerPerHour = document.createElement('td');
-  customerPerHour.textContent = this.customerPerHour();
-  customerPerHour.appendChild(avgCookiesale);
-
+  for(var i = 0; i < hoursOperation.length; i++); {
+    customerPerHour.textContent = customerPerHour[i];
+    newRow.appendChild('td');
+  }
   var cookiesPerHour = document.createElement('td');
-  cookiesPerHr.textContent = this.cookiesPerHr();
-  cookiesPerHr.appendChild(cookiesPerHr);
-
+  for(var i = 0; i < hoursOperation.length; i++); {
+    cookiesPerHour.textContent = cookiesPerHour[i];
+    newRow.appendChild('td');
+  }
   var totalCookies = document.createElement('td');
-  totalCookies.textContent = this.totalCookies();
-  totalCookies.appendChild(totalCookies);
+  for(var i = 0; i < hoursOperation.length; i++) {
+    td.textContent = totalCookies[i];
+    newRow.appendChild('td');
+  }
+  fullTable.appendChild('salmonTable');
 
-  salmonTable.appendChild(salmonTable);
+  //To create instance use the new to call constructor function
 
-//To create instance use the new to call constructor function
+  var storeOne = new Salmon('Seattle',23,65,6.3);
+  var storeTwo = new Salmon('Tokyo', 3, 24, 1.2);
+  var storeThree = new Salmon('Dubai', 11, 38, 3.7);
+  var storeFour = new Salmon('Paris',20,38,2.3);
+  var storeFive = new Salmon('SLima',2,16,4.6);
 
-var storeOne = new Salmon('Seattle',23,65,6.3);
-var storeTwo = new Salmon('Tokyo', 3, 24, 1.2);
-var storeThree = new Salmon('Dubai', 11, 38, 3.7);
-var storeFour = new Salmon('Paris',20,38,2.3);
-var storeFive = new Salmon('SLima',2,16,4.6);
+  var allStore = [storeOne, storeTwo, storeThree, storeFour, storeFive];
 
-var allStore = [storeOne, storeTwo, storeThree, storeFour, storeFive];
-
-function renderAllData() {
-  for (var i = 0; i < allStore.length; i++);
-  allStore
-}
+  for (var i = 0; i < allStore.length; i++);{
+    allStore[i].render();
+  }
+};
