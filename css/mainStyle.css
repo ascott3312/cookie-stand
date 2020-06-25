@@ -1,44 +1,42 @@
-header, footer {
-  text-align: center;
-  font-size: 80px;
-  background-color: darkgreen;
-  padding: 20px;
-} 
-
 head {
-  image-rendering: auto;
-  display: inline;
-  background-color: coral;
-  
+  font-size: 40px;
 }
 
-body {
+header, footer{
   background-color: blue;
   color: white;
-  padding: 1px;
+  Padding: 20px;
 }
-
-ul li {
- font-style: Arial;
- margin-left: 20px; 
+h1, h2 {
+  background-color: green;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  image-rendering: auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
+nav ul li {
+  display: inline;
+  margin-left: 20px;
+  font-size: 24px;
+  Padding 20px:
+  }
 
-li {
-  color: black;
-  padding: 10px;
+body {
+background-color: cornsilk;
 }
 table {
-  width: 750px;
+  width: 900px;
+  background-color: chocolate;
   border: 2px solid black;
   margin-left: 10px;
 }
 th, td {
   padding: 2x 2px 2px 2px;
-  
-}
+  }
 
 th {
-  font-size 100%;
+  font-size: 100%;
   text-align: center;
   border-bottom: 2px solid black;
   margin-left: 10px;
@@ -46,4 +44,11 @@ th {
 tr {
   text-align:  center;
   color: black;
+  border: black;
+}
+p {
+  color: black;
+  padding: 10px;
+  text-align: left;
+  size: 20px;
 }
