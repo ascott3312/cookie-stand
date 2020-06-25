@@ -3,6 +3,9 @@
 console.log('app.js is connected.');
 
 //Constructor Function
+var newTable = document.getElementById('salmon-table');
+
+
 
 function randomCustperhr(min,max) {
   return Math.floor(Math.random() * (max - min + 1 ) + min);
@@ -35,11 +38,23 @@ Salmon.prototype.calcTotal = function() {
     this.totalCookies = this.totalCookies + this.cookiesPerHour[i];
   }
 };
-//To rendor the table
+
+
+
+
+
+
+
+
+
+
+
 
 // var tableRow = document.createElement('tr');
 // var tableData = document.createElement('td');
 //Create Table Header
+//        function invocation  Salmon(parameters to build object);
+//To create instance use the new to call constructor function
 
 var storeOne = new Salmon('Seattle',23,65,6.3);
 var storeTwo = new Salmon('Tokyo', 3, 24, 1.2);
@@ -49,8 +64,9 @@ var storeFive = new Salmon('Lima',2,16,4.6);
 
 var allStore = [storeOne, storeTwo, storeThree, storeFour, storeFive];
 
-var newTable = document.getElementById('salmon-table');
 
+
+//To rendor the table
 Salmon.prototype.render = function() {
   this.calcTotal();
   var newTableHead = document.createElement('thead');
@@ -69,23 +85,58 @@ Salmon.prototype.render = function() {
   //   custPerTD.textContent = this.customerPerHour[i];
   //   newRow.appendChild(custPerTD);
   // }
- 
+
   for(var i = 0; i < hoursOperation.length; i++) {
-    var cookPerTD = document.createElement('td'); 
+    var cookPerTD = document.createElement('td');
     cookPerTD.textContent = this.cookiesPerHour[i];
     newRow.appendChild(cookPerTD);
   }
   var totalTD = document.createElement('td');
-  totalTD.textContent = this.totalCookies[i];
+  totalTD.textContent = this.totalCookies;
+  // console.log(totalTD);
   newRow.appendChild(totalTD);
 };
-//To create instance use the new to call constructor function
-
 
 for (var i = 0; i < allStore.length; i++){
-  allStore[i].render();
+  allStore[i].render(); 
 }
+
+
+makeTheFooterRow();
+
+
+
+function makeTheFooterRow(){
 // Creats table footer
-var newFooter = document.createElement('tfoot');
-newFooter.textContent='Total Hourly';
-newTable.appendChild(newFooter);
+  console.log('footer function');
+  //var newFooter = document.createElement('tfoot');
+  var footerRow = document.createElement('tr');
+  var footerText = document.createElement('th');
+  footerText.textContent = 'Total Hourly';
+  footerRow.appendChild(footerText);
+
+  var totalOfHours = 0;
+  var hourlyTotals = 0;
+
+  for(var i = 0; i < hoursOperation.length; i++){
+    hourlyTotals = 0;
+    //console.log('first loop', i);
+
+    for(var j = 0; j < allStore.length; j++){
+      //console.log('second loop', j);
+      hourlyTotals += allStore[j].cookiesPerHour[i];
+      //console.log('second loop', hourlyTotals);
+      totalOfHours += allStore[j].cookiesPerHour[i];
+    }
+    footerText = document.createElement('th');
+    footerText.textContent = hourlyTotals;
+    footerRow.appendChild(footerText);
+  }
+  footerText = document.createElement('th');
+  footerText.textContent = totalOfHours;
+  footerRow.appendChild(footerText);
+
+
+  newTable.appendChild(footerRow);
+
+}
