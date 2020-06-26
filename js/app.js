@@ -14,8 +14,9 @@ var hoursOperation = ['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:'
 // Constructor to create objects for the this lab.
 function Salmon(name, minCust, maxCust,avgCookiesale){
   this.name = name;
-  this.minCust = minCust;
-  this.maxCust = maxCust;
+  // ADDED IN PARSEINT FOR NEW INCOMING PARAMETERS FOR THE FORM
+  this.minCust = parseInt(minCust);
+  this.maxCust = parseInt(maxCust);
   this.avgCookiesale = avgCookiesale;
   this.customerPerHour = [];
   this.cookiesPerHour = [];
