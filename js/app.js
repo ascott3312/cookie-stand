@@ -74,14 +74,21 @@ Salmon.prototype.render = function() {
   newRow.appendChild(totalTD);
 };
 
-for (var i = 0; i < allStore.length; i++){
-  allStore[i].render();
+//Create a function to render the whole table. 
+//so that we only have to call this one function and it will redrawl our whole page.
+function renderTheTable(){
+  newTable.innerHTML = '';
+  for (var i = 0; i < allStore.length; i++){
+    allStore[i].render();
+
+  }
+  makeTheFooterRow();
 }
 
-makeTheFooterRow();
-
+renderTheTable();
 //Totals for the table
 function makeTheFooterRow(){
+
   // Creats table footer
   //console.log('footer function');
   //var newFooter = document.createElement('tfoot');
@@ -135,8 +142,10 @@ function handleFormSubmitted(event) {
   // newStore.getcustomerPerHour();
   // newStore.getcookiesPerHour();
   // newStore.gettotalCookies ();
-  newStore.render();
-//call this render to render a row just like you did on line 78.
+  allStore.push(newStore);
+  // add this call to our new render function. 
+  renderTheTable();
+
   var form = document.getElementById('newStore');
   form.reset();
 }
