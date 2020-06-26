@@ -82,7 +82,7 @@ makeTheFooterRow();
 //Totals for the table
 function makeTheFooterRow(){
   // Creats table footer
-  console.log('footer function');
+  //console.log('footer function');
   //var newFooter = document.createElement('tfoot');
   var footerRow = document.createElement('tr');
   var footerText = document.createElement('th');
