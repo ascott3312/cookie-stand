@@ -52,3 +52,13 @@ p {
   text-align: left;
   size: 20px;
 }
+legend {
+  color: black;
+  font-size: 20px;
+  padding-top: 20px;
+}
+fieldset {
+background-color:green;
+font-family: Arial, Helvetica, sans-serif;
+padding: 10px;
+}
