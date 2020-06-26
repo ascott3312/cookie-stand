@@ -120,8 +120,8 @@ function handleFormSubmitted(event) {
   event.preventDefault();
 
   var nameInput = document.getElementById('name');
-  var nameValue = nameInput('value');
-
+  var nameValue = nameInput['value'];
+  //add brackets like this []  instead of parens ()which are for function calls
   var minInput = document.getElementById('minCust');
   var minNumber = minInput.value;
 
@@ -132,10 +132,11 @@ function handleFormSubmitted(event) {
   var avgNumber = avgCust.value;
 
   var newStore = new Salmon(nameValue, minNumber, maxNumber, avgNumber);
-  newStore.getcustomerPerHour();
-  newStore.getcookiesPerHour();
-  newStore.gettotalCookies ();
-
+  // newStore.getcustomerPerHour();
+  // newStore.getcookiesPerHour();
+  // newStore.gettotalCookies ();
+  newStore.render();
+//call this render to render a row just like you did on line 78.
   var form = document.getElementById('newStore');
   form.reset();
 }
