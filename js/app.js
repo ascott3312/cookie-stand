@@ -131,7 +131,7 @@ function handleFormSubmitted(event) {
   var avgCust = document.getElementById('avgCookiesale');
   var avgNumber = avgCust.value;
 
-  var newStore = new Store(nameValue, minNumber, maxNumber, avgNumber);
+  var newStore = new Salmon(nameValue, minNumber, maxNumber, avgNumber);
   newStore.getcustomerPerHour();
   newStore.getcookiesPerHour();
   newStore.gettotalCookies ();
