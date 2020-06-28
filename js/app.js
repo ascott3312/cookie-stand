@@ -112,33 +112,35 @@ function makeTheFooterRow(){
   newTable.appendChild(footerRow);
 }
 
-// //display a new store that the user inputs
-// function handleFormSubmitted(event) {
-//   //console.log('form button was clicked');
-//   //console.log(event);
-//   event.preventDefault();
+//display a new store that the user inputs
+function handleFormSubmitted(event) {
+  //console.log('form button was clicked');
+  //console.log(event);
+  event.preventDefault();
 
-//   var nameInput = document.getElementById('name');
-//   var nameValue = nameInput('value');
+  var nameInput = document.getElementById('name');
+  var nameValue = nameInput.value;
 
-//   var minInput = document.getElementById('minCust');
-//   var minNumber = parseInt(minInput.value);
+  var minInput = document.getElementById('minCust');
+  var minNumber = parseInt(minInput.value);
 
-//   var maxInput = document.getElementById('maxCust');
-//   var maxNumber = parseInt(maxInput.value);
+  var maxInput = document.getElementById('maxCust');
+  var maxNumber = parseInt(maxInput.value);
 
-//   var avgCust = document.getElementById('avgCookiesale');
-//   var avgNumber = parseInt(avgCust.value);
+  var avgCust = document.getElementById('avgCookiesale');
+  var avgNumber = parseInt(avgCust.value);
 
-//   var newStore = new Store(nameValue, minNumber, maxNumber, avgNumber);
-//   // newStore.getcustomerPerHour();
-//   // newStore.getcookiesPerHour();
-//   // newStore.gettotalCookies ();
+  var newStore = new Store(nameValue, minNumber, maxNumber, avgNumber);
+  newStore.this.customerPerHour = [];
+  newStore.this.cookiesPerHour = [];
+  newStore.this.totalCookies = 0;
 
-//   var form = document.getElementById('newStore');
-//   form.reset();
-// }
+  newStore.render();
 
-// var formElement = document.getElementById('newStore');
-// formElement.addEventListener('submit', handleFormSubmitted);
+  var form = document.getElementById('form');
+  form.reset();
+}
+
+var formElement = document.getElementById('form');
+formElement.addEventListener('submit', handleFormSubmitted);
 
