@@ -2,7 +2,7 @@ head {
   font-size: 40px;
 }
 
-header, footer{
+header {
   background-color: blue;
   color: white;
   Padding: 20px;
@@ -19,11 +19,14 @@ nav ul li {
   display: inline;
   margin-left: 20px;
   font-size: 24px;
-  Padding 20px:
   }
-
+a {
+  color: white;
+}
 body {
 background-color: cornsilk;
+margin-left: 20px;
+margin-right: 20px;
 }
 table {
   width: 900px;
@@ -47,9 +50,7 @@ tr {
   border: black;
 }
 p {
-  color: black;
-  padding: 10px;
-  text-align: left;
+  color: whitesmoke;
   size: 20px;
 }
 legend {
@@ -61,4 +62,18 @@ fieldset {
 background-color:green;
 font-family: Arial, Helvetica, sans-serif;
 padding: 10px;
+}
+button {
+  float: right;
+}
+div img {
+  margin-left: 80px;
+  padding-top: 20px;
+}
+footer {
+  margin-top: 20px;
+  background-color:blue;
+}
+footer img {
+  float: left;
 }

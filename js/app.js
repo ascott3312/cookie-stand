@@ -122,18 +122,18 @@ function handleFormSubmitted(event) {
   var nameValue = nameInput('value');
 
   var minInput = document.getElementById('minCust');
-  var minNumber = minInput.value;
+  var minNumber = parseInt(minInput.value);
 
   var maxInput = document.getElementById('maxCust');
-  var maxNumber = maxInput.value;
+  var maxNumber = parseInt(maxInput.value);
 
   var avgCust = document.getElementById('avgCookiesale');
-  var avgNumber = avgCust.value;
+  var avgNumber = parseInt(avgCust.value);
 
   var newStore = new Store(nameValue, minNumber, maxNumber, avgNumber);
-  newStore.getcustomerPerHour();
-  newStore.getcookiesPerHour();
-  newStore.gettotalCookies ();
+  // newStore.getcustomerPerHour();
+  // newStore.getcookiesPerHour();
+  // newStore.gettotalCookies ();
 
   var form = document.getElementById('newStore');
   form.reset();
