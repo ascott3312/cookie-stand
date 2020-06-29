@@ -119,7 +119,7 @@ function handleFormSubmitted(event) {
   event.preventDefault();
 
   var nameInput = document.getElementById('name');
-  var nameValue = nameInput('value');
+  var nameValue = nameInput.value;
 
   var minInput = document.getElementById('minCust');
   var minNumber = parseInt(minInput.value);
@@ -131,14 +131,16 @@ function handleFormSubmitted(event) {
   var avgNumber = parseInt(avgCust.value);
 
   var newStore = new Store(nameValue, minNumber, maxNumber, avgNumber);
-  // newStore.getcustomerPerHour();
-  // newStore.getcookiesPerHour();
-  // newStore.gettotalCookies ();
+  newStore.this.customerPerHour = [];
+  newStore.this.cookiesPerHour = [];
+  newStore.this.totalCookies = 0;
 
-  var form = document.getElementById('newStore');
+  newStore.render();
+
+  var form = document.getElementById('form');
   form.reset();
 }
 
-var formElement = document.getElementById('newStore');
+var formElement = document.getElementById('form');
 formElement.addEventListener('submit', handleFormSubmitted);
 
