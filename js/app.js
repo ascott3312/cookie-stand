@@ -140,7 +140,7 @@ function handleFormSubmitted(event) {
   var form = document.getElementById('form');
   form.reset();
 }
-
+// handleFormSubmitted();
 var formElement = document.getElementById('form');
 formElement.addEventListener('submit', handleFormSubmitted);
 
