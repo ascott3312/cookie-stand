@@ -73,11 +73,17 @@ Salmon.prototype.render = function() {
   newRow.appendChild(totalTD);
 };
 
-for (var i = 0; i < allStore.length; i++){
-  allStore[i].render();
-}
+//Create a function to render the whole table. 
+//so that we only have to call this one function and it will redrawl our whole page.
+function renderTheTable(){
+  newTable.innerHTML = '';
+  for (var i = 0; i < allStore.length; i++){
+    allStore[i].render();
+  }
 
-makeTheFooterRow();
+  makeTheFooterRow();
+}
+renderTheTable();
 
 //Totals for the table
 function makeTheFooterRow(){
@@ -110,37 +116,38 @@ function makeTheFooterRow(){
 
 
   newTable.appendChild(footerRow);
-}
 
-//display a new store that the user inputs
-function handleFormSubmitted(event) {
+
+  //display a new store that the user inputs
+  function handleFormSubmitted(event) {
   //console.log('form button was clicked');
   //console.log(event);
-  event.preventDefault();
+    event.preventDefault();
 
-  var nameInput = document.getElementById('name');
-  var nameValue = nameInput.value;
+    var nameInput = document.getElementById('name');
+    var nameValue = nameInput.value;
 
-  var minInput = document.getElementById('minCust');
-  var minNumber = parseInt(minInput.value);
+    var minInput = document.getElementById('minCust');
+    var minNumber = parseInt(minInput.value);
 
-  var maxInput = document.getElementById('maxCust');
-  var maxNumber = parseInt(maxInput.value);
+    var maxInput = document.getElementById('maxCust');
+    var maxNumber = parseInt(maxInput.value);
 
-  var avgCust = document.getElementById('avgCookiesale');
-  var avgNumber = parseInt(avgCust.value);
+    var avgCust = document.getElementById('avgCookiesale');
+    var avgNumber = parseInt(avgCust.value);
 
-  var newStore = new Store(nameValue, minNumber, maxNumber, avgNumber);
-  newStore.this.customerPerHour = [];
-  newStore.this.cookiesPerHour = [];
-  newStore.this.totalCookies = 0;
+    var newStore = new Salmon(nameValue, minNumber, maxNumber, avgNumber);
+    // newStore.this.customerPerHour = [];
+    // newStore.this.cookiesPerHour = [];
+    // newStore.this.totalCookies = 0;
+    allStore.push(newStore);
 
-  newStore.render();
+    renderTheTable();
 
-  var form = document.getElementById('form');
-  form.reset();
+    var form = document.getElementById('form');
+    form.reset();
+  }
+  // handleFormSubmitted();
+  var formElement = document.getElementById('form');
+  formElement.addEventListener('submit', handleFormSubmitted);
 }
-// handleFormSubmitted();
-var formElement = document.getElementById('form');
-formElement.addEventListener('submit', handleFormSubmitted);
-
